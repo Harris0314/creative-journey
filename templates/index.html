@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+
+        /* 导航栏容器 */
+.navbar {
+  overflow: hidden;
+  {#background-color: #333;#}
+  font-family: Arial;
+                {#position: fixed; /* 固定在页面顶部 */#}
+            top: 0%; /* 与页面顶部对齐 */
+            right: 0%;
+            width: 100%; /* 宽度占满整个页面 */
+            background-color: #449d44; /* 导航栏背景颜色 */
+
+}
+
+/* 导航栏内的链接 */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* 下拉容器 */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* 下拉按钮 */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* 对手机垂直对齐很重要 */
+  margin: 0; /* 对手机垂直对齐很重要 */
+}
+
+/* 为悬停时的导航栏链接添加红色背景颜色 */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #555;
+}
+
+/* 下拉内容（默认隐藏）*/
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* 下拉列表中的链接 */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* 为悬停时的下拉链接添加灰色背景颜色 */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* 悬停时显示下拉菜单 */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+        .slide {
+            min-width: 100%;
+            display: flex;
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+        }
+
+        /* 底部导航栏样式 */
+        .footer {
+            position: fixed; /* 使用固定定位 */
+            bottom: 0; /* 距离底部的距离为0 */
+            left: 0; /* 距离左侧的距离为0 */
+            width: 100%; /* 宽度占满整个页面 */
+            background-color: #000; /* 设置背景颜色为黑色 */
+            color: #fff; /* 设置文字颜色为白色 */
+            padding: 5px 0; /* 设置内边距 */
+            text-align: center; /* 文字居中 */
+        }
+
+          /* 设置背景图片 */
+        body {
+            background-color: #dff0d8;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            height: 100vh; /* 让背景图片充满整个视口 */
+            margin: 0;
+            padding: 0;
+            padding-top: 50px; /* 为了避免导航栏遮挡页面内容，添加上边距 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="navbar">
+  <a href="#home">主页</a>
+          <div class="dropdown">
+    <button class="dropbtn">使用指南
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">请按照给出的提示词输入相关内容,点击生成,即可完成故事的创作</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">制作团队
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">团队成员:李政通，李佩伦，张国豪，戚之夏，杨依涵</a>
+    </div>
+  </div>
+</div>
+{#    <nav>#}
+{#        <ul>#}
+{#            <li><a href="#">主页</a></li>#}
+{#            <li>#}
+{#                <a href="#">制作团队</a>#}
+{#                <ul class="dropdown-content">#}
+{#                    <li><a href="#">李政通，李佩伦，张国豪，戚之夏，杨依涵</a></li>#}
+{#                </ul>#}
+{#            </li>#}
+{#            <li><a href="#">使用说明</a></li>#}
+{#            <li class="dropdown">#}
+{#                <a href="#">更多</a>#}
+{#                <ul class="dropdown-content">#}
+{#                    <li><a href="#">选项1</a></li>#}
+{#                    <li><a href="#">选项2</a></li>#}
+{#                    <li><a href="#">选项3</a></li>#}
+{#                </ul>#}
+{#            </li>#}
+{#        </ul>#}
+{#    </nav>#}
+    <!-- 其他内容 -->
+    <div style="text-align: center;">
+    <h2>欢迎来到创想之旅！</h2>
+
+</div>
+    <div class="slide current-slide"><img src="/static/images/image2.jpg" style="width: 60%"></div>
+{#    <a href="{{ url_for('chat') }}" method="POST">点击此处开始创作吧！</a>#}
+    <div>   <h1>   </h1></div>
+    <div class="slide current-slide"><h3>在所有人当中，儿童的想象力最丰富</h3></div>
+<div style="text-align: center;">
+    <button onclick="window.location.href='{{ url_for('chat') }}'" style="background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;">点击此处开始创作吧！</button>
+</div>
+
+
+    <div class="footer">
+        <ul>
+            <h1 style="color: white;font-size: medium">有问题请联系1721394582@qq.com</h1>
+        </ul>
+    </div>
+</body>
+</html>

@@ -75,6 +75,7 @@ $(document).ready(function() {
       }
     }
     lastResponseElement.append(escapedMessage);
+    lastResponseElement.append('<img src="' + image_url + '" alt="image" style="width: 100%;">');
     chatWindow.scrollTop(chatWindow.prop('scrollHeight'));
   }
 
